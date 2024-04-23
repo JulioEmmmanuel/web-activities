@@ -1,16 +1,13 @@
-"use client";
-
 import { FaRegStar, FaStar } from "react-icons/fa6"
 import { CardTitle } from "@/components/atoms/CardTitle"
 import { CardText } from "@/components/atoms/CardText"
-import { useState } from "react";
-import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { Character } from "@/types/Character";
+import Link from "next/link";
 
 interface CardInfoProps {
     character: Character
     isFavorite: boolean
-    toggleFavorite: (character:Character, favorite:boolean) => void
+    toggleFavorite: (element:Character, favorite:boolean) => void
 }
 
 export function CardInfo({
@@ -21,7 +18,9 @@ export function CardInfo({
 
     return <>
         <div className="flex justify-around items-center">
-            <CardTitle title={character.name}/>
+            <Link href={`/characters/${character.id}`}>
+                <CardTitle title={character.name}/>
+            </Link>
             <div 
                 className="cursor-pointer"
                 onClick={() => {

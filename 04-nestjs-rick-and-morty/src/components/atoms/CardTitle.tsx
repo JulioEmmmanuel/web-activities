@@ -5,5 +5,5 @@ interface CardTitleProps {
 export function CardTitle({
     title
 }: CardTitleProps){
-    return <h3 className="text-lg font-bold">{title}</h3>
+    return <h3 className="text-lg font-bold hover:text-gray-300">{title}</h3>
 }

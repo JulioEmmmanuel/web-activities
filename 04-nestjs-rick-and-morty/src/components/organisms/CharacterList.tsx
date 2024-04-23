@@ -1,6 +1,3 @@
-"use client";
-
-import { Character } from "@/types/Character"
 import { PropsWithChildren } from 'react'
 
 export function CharacterList({

@@ -1,14 +1,12 @@
-"use client";
-
 import Image from "next/image";
 import { Character } from "@/types/Character";
-import { CardInfo } from "./CharacterInfo";
+import { CardInfo } from "./CardInfo";
 
 
 interface CharacterCardProps {
     character: Character
     isFavorite: boolean
-    toggleFavorite: (character:Character, favorite:boolean)=> void
+    toggleFavorite: (element:Character, favorite:boolean)=> void
 }
 
 export default function CharacterCard({
