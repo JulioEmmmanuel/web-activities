@@ -1,4 +1,3 @@
-import { Character } from "@/types/Character";
 import { useLocalStorage } from "./useLocalStorage";
 import { Identifiable } from "@/types/Identifiable";
 
