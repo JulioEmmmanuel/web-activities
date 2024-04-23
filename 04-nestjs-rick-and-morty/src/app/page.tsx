@@ -3,19 +3,15 @@
 import CharacterCard from "@/components/molecules/CharacterCard";
 import { CharacterList } from "@/components/organisms/CharacterList";
 import { PageTemplate } from "@/components/organisms/PageTemplate";
-import { useLocalStorage } from "@/hooks/useLocalStorage";
+import { useFavorites } from "@/hooks/useFavorites";
 import { getCharacters } from "@/services/getCharacters";
 import { Character } from "@/types/Character";
 import { useEffect, useState } from "react";
 
 export default function Home() {
 
-  const {
-    state:favorites, 
-    setValue:setFavorites
-  } = useLocalStorage<Character[]>("characters", []);
-
   const [characters, setCharacters] = useState<Character[]>([]);
+  const {favorites, toggleFavorite} = useFavorites<Character>("characters");
 
   useEffect(() => {
 
@@ -27,14 +23,6 @@ export default function Home() {
     fetchCharacters();
 
   }, [])
-
-  const toggleFavorite = (character: Character, favorite: boolean) => {
-    if(favorite){
-        setFavorites(favorites.filter(fav => fav.id !== character.id))
-    } else {
-        setFavorites([...favorites, character])
-    }
-  }
 
   return (
     <>

@@ -1,6 +1,7 @@
 import { Place } from "@/types/Place";
+import { Identifiable } from "./Identifiable";
 
-export interface Character {
+export interface Character extends Identifiable {
     id: number,
     name: string,
     status: string,

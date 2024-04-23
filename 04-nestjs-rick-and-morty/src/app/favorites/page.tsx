@@ -3,23 +3,13 @@
 import CharacterCard from "@/components/molecules/CharacterCard";
 import { CharacterList } from "@/components/organisms/CharacterList";
 import { PageTemplate } from "@/components/organisms/PageTemplate";
-import { useLocalStorage } from "@/hooks/useLocalStorage";
+import { useFavorites } from "@/hooks/useFavorites";
 import { Character } from "@/types/Character";
 
-export default function Home() {
+export default function Favorites() {
 
-    const {
-        state:favorites, 
-        setValue:setFavorites,
-    } = useLocalStorage<Character[]>("characters", []);
+    const {favorites, toggleFavorite} = useFavorites<Character>("characters");
 
-    const toggleFavorite = (character: Character, favorite: boolean) => {
-        if(favorite){
-            setFavorites(favorites.filter(fav => fav.id !== character.id))
-        } else {
-            setFavorites([...favorites, character])
-        }
-    }
     
     return (
         <>
