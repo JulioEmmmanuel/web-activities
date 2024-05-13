@@ -6,7 +6,7 @@ interface CharacterDetailCardProps {
     character: Character
 }
 
-export default function CharacterDetailCard({
+export function CharacterDetailCard({
     character,
 }: CharacterDetailCardProps){
 

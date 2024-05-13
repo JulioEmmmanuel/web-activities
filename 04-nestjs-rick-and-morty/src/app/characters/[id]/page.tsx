@@ -1,6 +1,7 @@
-import CharacterDetailCard from "@/components/ui/molecules/CharacterDetailCard";
 import { PageTemplate } from "@/components/ui/organisms/PageTemplate";
 import { getCharacterById } from "@/services/getCharacterById";
+import { CharacterDetailCard } from "@/components/ui/molecules/CharacterDetailCard";
+
 
 export default async function CharacterDetail({ params }: { params: { id: string } }) {
 
