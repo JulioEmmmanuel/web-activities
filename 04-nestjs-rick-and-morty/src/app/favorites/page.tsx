@@ -1,16 +1,15 @@
 "use client";
 
-import CharacterCard from "@/components/molecules/CharacterCard";
-import { CharacterList } from "@/components/organisms/CharacterList";
-import { PageTemplate } from "@/components/organisms/PageTemplate";
+import CharacterCard from "@/components/ui/molecules/CharacterCard";
+import { CharacterList } from "@/components/ui/organisms/CharacterList";
+import { PageTemplate } from "@/components/ui/organisms/PageTemplate";
 import { useFavorites } from "@/hooks/useFavorites";
 import { Character } from "@/types/Character";
 
 export default function Favorites() {
 
     const {favorites, toggleFavorite} = useFavorites<Character>("characters");
-
-    
+ 
     return (
         <>
       <PageTemplate

@@ -1,6 +1,6 @@
 import { FaRegStar, FaStar } from "react-icons/fa6"
-import { CardTitle } from "@/components/atoms/CardTitle"
-import { CardText } from "@/components/atoms/CardText"
+import { CardTitle } from "@/components/ui/atoms/CardTitle"
+import { CardText } from "@/components/ui/atoms/CardText"
 import { Character } from "@/types/Character";
 import Link from "next/link";
 
