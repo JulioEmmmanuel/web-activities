@@ -9,8 +9,8 @@ export default function EpisodeList({
 }: EpisodeListProps){
 
     const getEpisodesNames = (episodes: string[]) => {
-        let list = episodes.length <= 4 ? episodes : episodes.slice(0, 4);
-        let episodesNames = list.map(ep => {
+        const list = episodes.length <= 4 ? episodes : episodes.slice(0, 4);
+        const episodesNames = list.map(ep => {
             const episodeName = getEpisode(ep)
             return <p key={episodeName} className="text-sm">Episode {episodeName}</p>
         })

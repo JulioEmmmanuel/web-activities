@@ -21,7 +21,7 @@ export function CardInfo({
             <Link href={`/characters/${character.id}`}>
                 <CardTitle title={character.name}/>
             </Link>
-            <div 
+            <button 
                 className="cursor-pointer"
                 onClick={() => {
                     toggleFavorite(character, isFavorite)
@@ -29,7 +29,7 @@ export function CardInfo({
             >
                 { isFavorite && <FaStar size={25}/> }
                 { !isFavorite && <FaRegStar size={25}/> }
-            </div>
+            </button>
         </div>
         <CardText text={`${character.status} - ${character.species}`}/>
         <CardText text={`Location: ${character.location.name}`}/>
