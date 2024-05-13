@@ -1,44 +1,26 @@
-"use client";
 import CharacterDetailCard from "@/components/ui/molecules/CharacterDetailCard";
 import { PageTemplate } from "@/components/ui/organisms/PageTemplate";
 import { getCharacterById } from "@/services/getCharacterById";
-import { Character } from "@/types/Character";
-import { useEffect, useState } from "react";
 
-export default function CharacterDetail({ params }: { params: { id: string } }) {
+export default async function CharacterDetail({ params }: { params: { id: string } }) {
 
-    const [character, setCharacter] = useState<Character>();
+  const character = await getCharacterById(Number(params.id));
   
-    useEffect(() => {
+  return (
+    <>
+      <PageTemplate
+        titleLink="Todos los personajes"
+        urlLink="/"
+      >
 
-      const fetchCharacters = async () => {
-          const res = await getCharacterById(Number(params.id));
-          setCharacter(res);
-      }
-  
-      fetchCharacters();
-  
-    }, [])
-  
-    return (
-      <>
-        <PageTemplate
-          titleLink="Todos los personajes"
-          urlLink="/"
-        >
+      {character && (
+          <>
+            <CharacterDetailCard character={character}/>
+          </>
+      )}
 
-        {character && (
-            <>
-                <CharacterDetailCard character={character}/>
-            </>
-            
-
-        )}
-
-        
-  
-        </PageTemplate>
-      </>   
-    );
-  }
+      </PageTemplate>
+    </>   
+  );
+}
   

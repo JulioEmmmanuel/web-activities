@@ -9,8 +9,7 @@ import { Character } from "@/types/Character";
 export default function Favorites() {
 
     const {favorites, toggleFavorite} = useFavorites<Character>("characters");
-
-    
+ 
     return (
         <>
       <PageTemplate
