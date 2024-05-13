@@ -1,6 +1,6 @@
 "use client";
-import CharacterDetailCard from "@/components/molecules/CharacterDetailCard";
-import { PageTemplate } from "@/components/organisms/PageTemplate";
+import CharacterDetailCard from "@/components/ui/molecules/CharacterDetailCard";
+import { PageTemplate } from "@/components/ui/organisms/PageTemplate";
 import { getCharacterById } from "@/services/getCharacterById";
 import { Character } from "@/types/Character";
 import { useEffect, useState } from "react";
