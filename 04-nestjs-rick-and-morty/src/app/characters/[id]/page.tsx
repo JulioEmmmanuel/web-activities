@@ -10,8 +10,8 @@ export default async function CharacterDetail({ params }: { params: { id: string
   return (
     <>
       <PageTemplate
-        titleLink="Todos los personajes"
-        urlLink="/"
+        titleLinks={["Todos los personajes", "Acerca de"]}
+        urlLinks={["/", "/about"]}
       >
 
       {character && (

@@ -27,8 +27,8 @@ export default function Home() {
   return (
     <>
       <PageTemplate
-        titleLink="Favoritos"
-        urlLink="/favorites"
+        titleLinks={["Favoritos", "Acerca de"]}
+        urlLinks={["/favorites", "/about"]}
       >
         <CharacterList>
 

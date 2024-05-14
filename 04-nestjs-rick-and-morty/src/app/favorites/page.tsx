@@ -13,8 +13,8 @@ export default function Favorites() {
     return (
         <>
       <PageTemplate
-        titleLink="Todos los personajes"
-        urlLink="/"
+        titleLinks={["Todos los personajes", "Acerca de"]}
+        urlLinks={["/", "/about"]}
       >
         <CharacterList>
 
