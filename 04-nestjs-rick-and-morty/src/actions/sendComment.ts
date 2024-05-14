@@ -8,7 +8,7 @@ const commentSchema = z.object({
         invalid_type_error: "El nombre debe ser un string",
         required_error: "El nombre es requerido",
     }).min(3, {
-        message: "El nombre debe contener al menos 5 caracteres"
+        message: "El nombre debe contener al menos 3 caracteres"
     }),
     topic: z.string({
         invalid_type_error: "El tema debe ser un string",
@@ -22,7 +22,7 @@ const commentSchema = z.object({
 })
 
 export default async function sendComment(
-        FormState: FormState,
+        formState: FormState,
         formData: FormData
     ){
     const validatedFields = commentSchema.safeParse({
