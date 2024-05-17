@@ -21,6 +21,8 @@ const commentSchema = z.object({
     }).optional()
 })
 
+export type CommentPayload = z.infer<typeof commentSchema>
+
 export default async function sendComment(
         formState: FormState,
         formData: FormData
