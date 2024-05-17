@@ -27,8 +27,8 @@ export function CardInfo({
                     toggleFavorite(character, isFavorite)
                 }}
             >
-                { isFavorite && <FaStar size={25}/> }
-                { !isFavorite && <FaRegStar size={25}/> }
+                { isFavorite && <FaStar data-testid="star-full" size={25}/> }
+                { !isFavorite && <FaRegStar data-testid="star-empty" size={25}/> }
             </button>
         </div>
         <CardText text={`${character.status} - ${character.species}`}/>

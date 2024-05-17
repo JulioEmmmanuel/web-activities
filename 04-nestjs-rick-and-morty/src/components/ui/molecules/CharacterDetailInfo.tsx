@@ -10,7 +10,7 @@ export default function CharacterDetailInfo({
 }: CharacterDetailInfoProps){
 
     return (
-        <div className="flex flex-col space-y-2">
+        <div data-testid="character-detail" className="flex flex-col space-y-2">
             <h2 className="mb-3 text-xl font-bold">{character.name}</h2>
             <h3>{character.status} - {character.gender}</h3>
             <h3><span className="font-bold">Species: </span>{character.species}</h3>

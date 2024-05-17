@@ -24,7 +24,7 @@ export default function CharacterCard({
                     alt={character.name}
                     className="w-1/3 h-auto rounded-bl-xl rounded-tl-xl"
                     />
-                <div className="w-2/3 py-5 pr-10 flex flex-col gap-y-2 text-center items-around text-white">
+                <div data-testid="card-info" className="w-2/3 py-5 pr-10 flex flex-col gap-y-2 text-center items-around text-white">
                     <CardInfo
                         character={character}
                         isFavorite={isFavorite}
