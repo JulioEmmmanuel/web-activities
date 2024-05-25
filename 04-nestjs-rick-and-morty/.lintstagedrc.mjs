@@ -12,5 +12,5 @@ const nextEslintCommand = (filenames) =>
 
 export default {
   '*.{js,ts,tsx}': [nextEslintCommand],
-  '*.{json,css}': 'prettier -w',
+  '*.{json,css,md}': 'prettier -w',
 }

@@ -1,16 +1,14 @@
 interface ButtonProps {
-    text: string
+  text: string
 }
 
-export function Button({
-    text
-}: ButtonProps){
-    return (
-        <button 
-            className="bg-emerald-700 text-white w-2/3 mx-auto px-10 py-2 rounded-xl mt-3"
-            type='submit'
-        >
-            {text}
-        </button>
-    )
+export function Button({ text }: ButtonProps) {
+  return (
+    <button
+      className='mx-auto mt-3 w-2/3 rounded-xl bg-emerald-700 px-10 py-2 text-white'
+      type='submit'
+    >
+      {text}
+    </button>
+  )
 }

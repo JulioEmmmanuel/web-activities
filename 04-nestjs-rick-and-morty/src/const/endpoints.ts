@@ -1,4 +1,4 @@
 export const endpoints = {
-    baseUrl: "https://rickandmortyapi.com",
-    getCharacters: "/api/character"
+  baseUrl: 'https://rickandmortyapi.com',
+  getCharacters: '/api/character',
 }

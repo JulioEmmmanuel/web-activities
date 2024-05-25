@@ -5,7 +5,7 @@ import { screen, render } from '@testing-library/react'
 import { CardText } from './CardText'
 // import component
 
-test("render as p", () => {
-    render(<CardText text="Texto"/>)
-    expect(screen.getByRole("paragraph")).toBeInTheDocument()
+test('render as p', () => {
+  render(<CardText text='Texto' />)
+  expect(screen.getByRole('paragraph')).toBeInTheDocument()
 })

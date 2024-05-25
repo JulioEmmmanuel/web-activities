@@ -3,16 +3,16 @@ import { TestCharacter, TestCharacter2 } from '@/types/Character'
 import { CharactersResponse } from '@/types/CharactersReponse'
 
 export const getAllCharacters = http.get(`*/api/character`, () => {
-  const payload:CharactersResponse = {
+  const payload: CharactersResponse = {
     info: {
       count: 2,
       pages: 1,
-      next: "",
-      prev: null
+      next: '',
+      prev: null,
     },
-    results: [TestCharacter, TestCharacter2]
+    results: [TestCharacter, TestCharacter2],
   }
-  
+
   return HttpResponse.json(payload)
 })
 
