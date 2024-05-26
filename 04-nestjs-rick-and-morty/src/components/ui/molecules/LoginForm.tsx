@@ -25,7 +25,7 @@ export function LoginForm() {
       await signIn('credentials', {
         username: formData.get('username'),
         password: formData.get('password'),
-        callbackUrl: '/characters',
+        callbackUrl: '/',
       })
     } catch (error) {
       setError('Credenciales inválidas')

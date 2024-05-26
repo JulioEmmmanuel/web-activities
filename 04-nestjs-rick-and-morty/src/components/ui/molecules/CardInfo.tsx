@@ -5,20 +5,22 @@ import { CardTitle } from '@/components/ui/atoms/CardTitle'
 import { CardText } from '@/components/ui/atoms/CardText'
 import { Character } from '@/types/Character'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { toggleFavorite } from '@/actions/toggleFavorite'
 
 interface CardInfoProps {
   character: Character
   type: 'normal' | 'favorite'
   isFavorite?: boolean
-  toggleFavorite?: (element: Character, favorite: boolean) => void
 }
 
 export function CardInfo({
   character,
   type,
   isFavorite = false,
-  toggleFavorite = () => {},
 }: CardInfoProps) {
+  const router = useRouter()
+
   return (
     <>
       <div className='flex items-center justify-around'>
@@ -28,8 +30,9 @@ export function CardInfo({
         {type === 'favorite' && (
           <button
             className='cursor-pointer'
-            onClick={() => {
-              toggleFavorite(character, isFavorite)
+            onClick={async () => {
+              await toggleFavorite(isFavorite, character.id)
+              router.refresh()
             }}
           >
             {isFavorite && <FaStar data-testid='star-full' size={25} />}

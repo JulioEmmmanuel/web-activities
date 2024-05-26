@@ -6,14 +6,12 @@ interface CharacterCardProps {
   character: Character
   type: 'normal' | 'favorite'
   isFavorite?: boolean
-  toggleFavorite?: (element: Character, favorite: boolean) => void
 }
 
 export default function CharacterCard({
   character,
   type,
   isFavorite,
-  toggleFavorite,
 }: CharacterCardProps) {
   return (
     <>
@@ -29,12 +27,7 @@ export default function CharacterCard({
           data-testid='card-info'
           className='items-around flex w-2/3 flex-col gap-y-2 py-5 pr-10 text-center text-white'
         >
-          <CardInfo
-            type={type}
-            character={character}
-            isFavorite={isFavorite}
-            toggleFavorite={toggleFavorite}
-          />
+          <CardInfo type={type} character={character} isFavorite={isFavorite} />
         </div>
       </div>
     </>
