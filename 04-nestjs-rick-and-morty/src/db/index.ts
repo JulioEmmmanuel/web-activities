@@ -10,5 +10,4 @@ export const client = new Pool({
   database: dbConfig.database,
 })
 
-
-export const db = drizzle(client, {logger: true});
+export const db = drizzle(client, { logger: true })

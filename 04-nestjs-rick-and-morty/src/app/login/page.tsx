@@ -1,9 +1,13 @@
-import { LoginForm } from "@/components/ui/molecules/LoginForm";
+import { LoginForm } from '@/components/ui/molecules/LoginForm'
+import { PageTemplate } from '@/components/ui/organisms/PageTemplate'
 
 export default function Login() {
-    return(
-        <main className='pt-32 mb-0 min-h-screen w-full bg-gray-200'>
-            <LoginForm/>
-        </main>
-    )
+  return (
+    <PageTemplate
+      titleLinks={['Personajes', 'Acerca de']}
+      urlLinks={['/', '/about']}
+    >
+      <LoginForm />
+    </PageTemplate>
+  )
 }

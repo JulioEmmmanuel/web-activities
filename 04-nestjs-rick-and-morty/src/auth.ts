@@ -1,36 +1,35 @@
-import NextAuth from "next-auth"
-import CredentialsProvider from "next-auth/providers/credentials"
-import { getUserByNameAndPass } from "./data/users";
-import { signupSchema } from "./schemas/signupschema";
- 
+import NextAuth from 'next-auth'
+import CredentialsProvider from 'next-auth/providers/credentials'
+import { getUserByNameAndPass } from './data/users'
+import { signupSchema } from './schemas/signupschema'
+
 export const { handlers, signIn, signOut, auth } = NextAuth({
   session: {
-    strategy: "jwt"
+    strategy: 'jwt',
   },
   pages: {
-    signIn: "/login",
-    error: "/login"
+    signIn: '/login',
+    error: '/login',
   },
   providers: [
     CredentialsProvider({
       credentials: {
         username: {},
-        password: {}
+        password: {},
       },
-      authorize: async(credentials) => {
-
+      authorize: async (credentials) => {
         if (!credentials) return null
 
-        const { username, password } = await signupSchema.parseAsync(credentials);
+        const { username, password } =
+          await signupSchema.parseAsync(credentials)
 
         const user = await getUserByNameAndPass({
-          username, 
-          password
+          username,
+          password,
         })
 
-        return user;
-      }
-      
-    })
+        return user
+      },
+    }),
   ],
 })
