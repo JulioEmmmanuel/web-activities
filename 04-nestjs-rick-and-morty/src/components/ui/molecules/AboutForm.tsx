@@ -7,7 +7,7 @@ import { TextInputLine } from './TextInputLine'
 import sendComment from '@/actions/sendComment'
 import { FormMessage } from '../atoms/FormMessage'
 
-export function Form() {
+export function AboutForm() {
   const [formState, action] = useFormState(sendComment, {
     message: '',
     error: false,
