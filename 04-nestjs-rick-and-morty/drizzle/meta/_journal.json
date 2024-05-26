@@ -1,0 +1,13 @@
+{
+  "version": "6",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1716691257151,
+      "tag": "0000_tearful_kate_bishop",
+      "breakpoints": true
+    }
+  ]
+}
