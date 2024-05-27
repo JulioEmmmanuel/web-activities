@@ -12,10 +12,14 @@ export default defineConfig({
     coverage: {
       // files to include in metrics for coverage
       // add your folders, adjust based on yor structure
-      include: ['src/components/**/*.{ts,tsx}', 'src/helpers/**/*.{ts,tsx}', 'src/services/**/*.{ts,tsx}'],
+      include: [
+        'src/components/**/*.{ts,tsx}',
+        'src/helpers/**/*.{ts,tsx}',
+        'src/services/**/*.{ts,tsx}',
+      ],
       // if you want to exclude some files
       exclude: [],
-      reporter: ['html', 'text-summary'],
+      reporter: ['html', 'text-summary', 'json'],
       thresholds: {
         functions: 50,
         lines: 50,
