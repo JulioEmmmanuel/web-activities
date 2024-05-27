@@ -2,7 +2,7 @@ import { db } from '@/db'
 import { FavoritesInsert, FavoritesSelect, favorites } from '@/db/schema'
 import { and, eq } from 'drizzle-orm'
 
-export const getUserFavorites = async ({
+export const getUserFavoritesIds = async ({
   userId,
 }: {
   userId: number

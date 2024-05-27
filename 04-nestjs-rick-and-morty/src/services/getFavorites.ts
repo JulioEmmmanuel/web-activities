@@ -1,8 +1,8 @@
-import { getUserFavorites } from '@/data/favorites'
+import { getUserFavoritesIds } from '@/data/favorites'
 import { getCharactersByIds } from './getCharactersByIds'
 
 export const getFavorites = async (userId: number) => {
-  const favorites = await getUserFavorites({ userId })
-  const favoriteCharacters = await getCharactersByIds(favorites)
+  const favoritesIds = await getUserFavoritesIds({ userId })
+  const favoriteCharacters = await getCharactersByIds(favoritesIds)
   return favoriteCharacters
 }

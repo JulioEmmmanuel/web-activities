@@ -2,14 +2,14 @@ import { auth } from '@/auth'
 import CharacterCard from '@/components/ui/molecules/CharacterCard'
 import { CharacterList } from '@/components/ui/organisms/CharacterList'
 import { PageTemplate } from '@/components/ui/organisms/PageTemplate'
-import { getUserFavorites } from '@/data/favorites'
+import { getUserFavoritesIds } from '@/data/favorites'
 import { getCharacters } from '@/services/getCharacters'
 
 export default async function Home() {
   const session = await auth()
   const characters = await getCharacters()
   const userId = Number(session?.user?.id)
-  const favoriteIds = await getUserFavorites({ userId })
+  const favoriteIds = await getUserFavoritesIds({ userId })
 
   return (
     <>
