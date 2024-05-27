@@ -27,7 +27,7 @@ export function SignupForm() {
         text: 'Has creado una cuenta con éxito, ahora puedes iniciar sesión',
       }).then((res) => {
         if (res.isConfirmed) {
-          router.push('/')
+          router.push('/login')
         }
       })
     }
