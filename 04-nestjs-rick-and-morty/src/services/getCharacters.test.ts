@@ -5,6 +5,5 @@ import { waitFor } from '@testing-library/react'
 
 test('expect getCharacters to return a list of Characters', async () => {
   const res = await waitFor(() => getCharacters())
-  console.log(res)
   expectTypeOf(res).toMatchTypeOf<Character[]>()
 })
