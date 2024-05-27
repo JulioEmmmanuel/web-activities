@@ -1,17 +1,14 @@
-import { test, expect, vi } from 'vitest'
+import { test, expect } from 'vitest'
 import { screen, render } from '@testing-library/react'
 import CharacterCard from './CharacterCard'
 import { TestCharacter } from '@/types/Character'
-
-//mock toggleFavorite function
-const mockToggleFavorite = vi.fn()
 
 test('render card info', () => {
   render(
     <CharacterCard
       character={TestCharacter}
       isFavorite={false}
-      toggleFavorite={mockToggleFavorite}
+      type='normal'
     />,
   )
   expect(screen.getByTestId('card-info')).toBeDefined()
@@ -20,9 +17,9 @@ test('render card info', () => {
 test('render card image', () => {
   render(
     <CharacterCard
+      type='normal'
       character={TestCharacter}
       isFavorite={false}
-      toggleFavorite={mockToggleFavorite}
     />,
   )
   const src = decodeURIComponent(

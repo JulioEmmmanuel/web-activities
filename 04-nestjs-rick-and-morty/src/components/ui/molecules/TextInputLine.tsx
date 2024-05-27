@@ -13,7 +13,7 @@ export function TextInputLine({
 }: TextInputLineProps) {
   return (
     <div className='mt-3 flex w-full justify-between gap-x-5'>
-      <label htmlFor={title}>{title}</label>
+      <label htmlFor={name}>{title}</label>
       <TextInput name={name} placeholder={placeholder} />
     </div>
   )

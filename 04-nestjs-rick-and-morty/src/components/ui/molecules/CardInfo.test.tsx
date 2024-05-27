@@ -1,18 +1,11 @@
-import { test, expect, vi } from 'vitest'
-import { screen, render, fireEvent } from '@testing-library/react'
+import { test, expect } from 'vitest'
+import { screen, render } from '@testing-library/react'
 import { CardInfo } from './CardInfo'
 import { TestCharacter } from '@/types/Character'
 
-//mock toggleFavorite function
-const mockToggleFavorite = vi.fn()
-
 test('render card info correctly', () => {
   render(
-    <CardInfo
-      character={TestCharacter}
-      isFavorite={false}
-      toggleFavorite={mockToggleFavorite}
-    />,
+    <CardInfo type='normal' character={TestCharacter} isFavorite={false} />,
   )
   expect(screen.getByText(TestCharacter.name)).toBeInTheDocument()
   expect(
@@ -25,34 +18,14 @@ test('render card info correctly', () => {
 
 test('render star button correctly when not favorite', () => {
   render(
-    <CardInfo
-      character={TestCharacter}
-      isFavorite={false}
-      toggleFavorite={mockToggleFavorite}
-    />,
+    <CardInfo type='favorite' character={TestCharacter} isFavorite={false} />,
   )
   expect(screen.getByTestId('star-empty')).toBeDefined()
 })
 
 test('render star button correctly when favorite', () => {
   render(
-    <CardInfo
-      character={TestCharacter}
-      isFavorite={true}
-      toggleFavorite={mockToggleFavorite}
-    />,
+    <CardInfo type='favorite' character={TestCharacter} isFavorite={true} />,
   )
   expect(screen.getByTestId('star-full')).toBeDefined()
-})
-
-test('call toggleFavorite function on button click', () => {
-  render(
-    <CardInfo
-      character={TestCharacter}
-      isFavorite={true}
-      toggleFavorite={mockToggleFavorite}
-    />,
-  )
-  fireEvent.click(screen.getByRole('button'))
-  expect(mockToggleFavorite).toBeCalledWith(TestCharacter, true)
 })

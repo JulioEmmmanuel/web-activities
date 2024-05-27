@@ -7,6 +7,7 @@ export function PasswordInput({ name, placeholder }: PasswordInputProps) {
   return (
     <input
       id={name}
+      data-testid='password'
       className='border border-gray-300 px-2'
       name={name}
       type='password'
