@@ -9,9 +9,7 @@ on:
     branches: main
     paths-ignore:
       - '**.md'
-defaults:
-  run:
-    working-directory: 
+      
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
